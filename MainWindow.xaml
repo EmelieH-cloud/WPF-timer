@@ -1,0 +1,46 @@
+﻿<Window x:Class="WPF_timer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_timer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="500">
+    <Grid>
+        <Label Content="00:00" Name="lblTime" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" VerticalAlignment="Top" HorizontalAlignment="Center" Height="62"/>
+        <Grid Name="MyGrid" Margin="0,92,0,10" ShowGridLines="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+        </Grid>
+    </Grid>
+    <Window.Resources>
+        <Style x:Key="buttons" TargetType="Button">
+            <Setter Property="Width" Value="70" />
+            <Setter Property="Height" Value="70" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Background" Value="HotPink" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <!-- This controltemplate will override the default template for a button.-->
+                        <!-- The new template will be an ellipse placed inside a grid -->
+                        <!-- The template will bind to the background property of our button-->
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+</Window>
